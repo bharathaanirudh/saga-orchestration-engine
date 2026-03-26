@@ -1,0 +1,15 @@
+# Saga engine defaults — override in consuming service
+saga:
+  mongodb:
+    uri: mongodb://root:root@localhost:27117/saga?authSource=admin&replicaSet=rs0
+    database: saga
+  kafka:
+    bootstrap-servers: localhost:9192
+    consumer:
+      group-id: saga-orchestrator
+    listener:
+      concurrency: 1
+  timeout:
+    poll-interval-ms: 60000
+  outbox:
+    poll-interval-ms: 30000
